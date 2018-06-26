@@ -13,5 +13,5 @@ High-Level Services and Data-Flow for Online Connect Four:
 - opponent pairing (kind of like an MC or announcer)
 	* randomly chooses opponent for you from the list of people that are online
 	* determines whose turn it is to play
-	* determines the winner/loser
+	* determines the winner
 
