@@ -1,0 +1,17 @@
+High-Level Services and Data-Flow for Online Connect Four:
+
+- player list (like a directory or bookkeeper)
+	* list of users online 
+	* and their status (busy, away, active)
+	
+- playing board
+	* contains 7x6 matrix/grid of unfilled circles
+	* must keep track of different coloured chips that are dropped (player chips)
+	* chips must be placed into the lowest available circle (bottom or on top of another chip)
+	* must recognize 4 chips of the same colour horizontally, vertically or diagonally
+	
+- opponent pairing (kind of like an MC or announcer)
+	* randomly chooses opponent for you from the list of people that are online
+	* determines whose turn it is to play
+	* determines the winner/loser
+
