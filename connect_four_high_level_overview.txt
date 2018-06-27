@@ -15,3 +15,27 @@ High-Level Services and Data-Flow for Online Connect Four:
 	* determines whose turn it is to play
 	* determines the winner
 
+Kate's Proposal :D
+User Connectivity Service
+	- see how many users there are, randomly choose 2 users in the user queue
+	—> sends those 2 users to game backend or a user in the case of waiting game UI
+Game backend
+	- Get 2 users information and its interactions
+	- compute each user’s game progress - connect 4
+	- Send those user’s game progress and user information to UI
+Game UI
+	- do not compute, but do all UI stuff
+	—> sends user interactions to Game backend
+
+A user comes in 
+	-> user connectivity service notifies game UI that there is only one user 
+	-> game ui shows user wait panel 
+	-> another user comes in 
+	-> user connectivity service notifies both UI and backend so that backend can start preparing a game and UI can now 		show the clear game UI 
+	-> while playing, game UI constantly sends user interaction information to backend, backend computes, and user 			connectivity service makes sure that the users are kept online 
+	-> if a user exits/ not kept online (user connectivity service notifies both), make the other user the winner, finish the 			game
+	-> if not, continue the game until the game ends
+	-> backend notifies ui who is the winner
+	-> ui shows the winner
+	-> game finished / backend wraps up
+	-> prepare for another game
